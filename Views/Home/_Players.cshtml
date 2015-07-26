@@ -1,0 +1,41 @@
+﻿@model LabProject.Models.PlayersViewModel
+
+<table width ="100%">
+    <tr>
+        <th>
+            @Html.DisplayName("Position")
+        </th>
+        <th>
+            @Html.DisplayName("Name")
+        </th>
+        <th>
+            @Html.DisplayName("Points")
+        </th>
+        <th>
+            @Html.DisplayName("Goals")
+        </th>
+        <th>
+            @Html.DisplayName("Assists")
+        </th>
+        <th>
+            @Html.DisplayName("Nationality")
+        </th>
+    </tr>
+
+    @{
+        int i = (Model.PageInfo.PageNumber - 1) * 10;
+        foreach (var player in Model.Players)
+        {
+            i++;
+            <tr>
+                <td>@i</td> <td>@player.Name</td> <td>@player.Points</td> <td>@player.Goals</td> <td>@player.Assists</td> <td>@player.Nationality</td>
+            </tr>
+        }
+    }
+</table>
+
+<div style="text-align:center">
+    <p style="margin-bottom:0">Page @Model.PageInfo.PageNumber of @Model.PageInfo.TotalPages</p>
+    @Ajax.ActionLink("Prev", "ShowPlayers", new { page = Model.PageInfo.PageNumber - 1 }, new AjaxOptions() { UpdateTargetId = "players" })
+    @Ajax.ActionLink("Next", "ShowPlayers", new { page = Model.PageInfo.PageNumber + 1 }, new AjaxOptions() { UpdateTargetId = "players" })
+</div>

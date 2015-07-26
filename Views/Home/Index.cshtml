@@ -1,0 +1,28 @@
+﻿@model IEnumerable<string>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+            <div id="content">
+                <span>Top scores of the history in the NHL: </span>
+                <div id="players">
+                    @Html.Action("ShowPlayersNotAjax", new { page = ViewBag.Page })
+                </div>
+            </div>
+
+
+            <div>
+                Comments:<br />
+                <ul id="comments">
+                    @foreach (var comment in Model)
+                    {
+                        <li>@comment</li>
+                    }
+                </ul>
+                @using (Ajax.BeginForm("AddComment", new AjaxOptions { UpdateTargetId = "comments", InsertionMode = InsertionMode.InsertAfter }))
+                {
+                    <p><textarea name="comment" rows="7" cols="75"></textarea></p>
+                    <input type="submit" value="Send" />
+                }
+            </div>

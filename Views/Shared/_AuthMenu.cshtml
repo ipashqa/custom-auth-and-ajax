@@ -1,0 +1,21 @@
+﻿<div id="auth-menu" style="margin-right:10px">
+    @if (HttpContext.Current.User.Identity.IsAuthenticated)
+    {
+        @User.Email
+
+        <ul style="margin-top:0; margin-bottom:0">
+            @if (User.IsInRole("admin"))
+            {
+                @Html.ActionLink("Admin panel", "Index", "Admin")
+            }
+            @Html.ActionLink("Log Out", "LogOut", "Account")
+        </ul>
+    }
+    else
+    {
+        <ul>
+            @Html.ActionLink("Sign In", "Login", "Account", null, new { @class = "auth-dialog", auth_dialog_title = "Authentication" })
+            @Html.ActionLink("Register", "Register", "Account")
+        </ul>
+    }
+</div>

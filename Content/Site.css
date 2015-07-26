@@ -1,0 +1,115 @@
+﻿body {
+    font-size: .85em;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    color: #232323;
+    background-color: #fff;
+    margin: 0px 0px 10px 0px;
+}
+
+a { color: blue; }
+
+header, footer, nav, section {
+    display: block;
+}
+
+
+ul#horizontal-menu {
+    margin-left:0;
+    padding-left:0;
+    list-style-type:none;
+    background:black;
+    float:left;
+    width:100%;
+}
+
+ul#horizontal-menu li {
+    display:inline
+}
+
+ul#horizontal-menu a {
+    display:block;
+    float:left;
+    padding:.5em 1.5em;
+    text-decoration:none;
+    color:white; /*цвет шрифта*/
+    background:black; /*цвет фона*/
+    /*border-right:1px solid white; /* Цвет и толщина разделительной линии */
+}
+
+ul#horizontal-menu a:hover {
+    background:#4d4d4d; /* Цвет фона при наведении мышки */
+}
+
+ul#vertical-menu {
+    margin-top:0;
+    margin-left: 0;
+    padding-left: 0;
+    list-style-type:none;
+}
+
+#vertical-menu li {
+    /*border-bottom: 1px solid #4d4d4d;*/
+}
+
+#vertical-menu a {
+    color: black;
+    padding: 5px;
+    text-decoration: none;
+    display: block;
+    padding-left:20px;
+}
+
+#vertical-menu a:hover {
+    background-color: #ddd;
+}
+
+
+/* Styles for basic forms
+-----------------------------------------------------------*/
+fieldset {
+    border: 1px solid #ddd;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+textarea {
+    min-height: 75px;
+}
+
+.editor-label {
+    margin: 1em 0 0 0;
+}
+
+.editor-field {
+    margin: 0.5em 0 0 0;
+}
+
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+    color: #f00;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid {
+    display: none;
+}
